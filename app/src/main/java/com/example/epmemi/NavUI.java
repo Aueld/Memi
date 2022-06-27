@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+
+import org.w3c.dom.Text;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -33,6 +36,8 @@ public class NavUI extends AppCompatActivity implements NavigationView.OnNavigat
     public Toolbar toolbar;
     public String currentActivityName;
     public static boolean vidia = false;
+    public TextView pLevel;
+    public static int level = 1;
 
     public ActivityResultLauncher<Intent> startActivityResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -89,7 +94,7 @@ public class NavUI extends AppCompatActivity implements NavigationView.OnNavigat
                 }
                 break;
             case R.id.nav_custom:
-                Toast.makeText(context, "커스텀 설정 정보를 확인합니다", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "커스텀 설정 아직 구현되지 않았습니다", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_deleter:
                 if (currentActivityName.equals("DeleteActivity")) {
